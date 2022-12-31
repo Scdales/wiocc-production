@@ -1,0 +1,291 @@
+@font-face {
+	font-family: 'GothamLight';
+	src: url('../fonts/Gotham-Light.eot');
+	src: url('../fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gotham-Light.woff2') format('woff2'),
+	url('../fonts/Gotham-Light.woff') format('woff'),
+	url('../fonts/Gotham-Light.svg#Gotham-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamRegular';
+	src: url('../fonts/Gotham-Book.eot');
+	src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gotham-Book.woff2') format('woff2'),
+	url('../fonts/Gotham-Book.woff') format('woff'),
+	url('../fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamMedium';
+	src: url('../fonts/Gotham-Medium.eot');
+	src: url('../fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gotham-Medium.woff2') format('woff2'),
+	url('../fonts/Gotham-Medium.woff') format('woff'),
+	url('../fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamBold';
+	src: url('../fonts/Gotham-Bold.eot');
+	src: url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gotham-Bold.woff2') format('woff2'),
+	url('../fonts/Gotham-Bold.woff') format('woff'),
+	url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamBlack';
+	src: url('../fonts/Gotham-Black.eot');
+	src: url('../fonts/Gotham-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gotham-Black.woff2') format('woff2'),
+	url('../fonts/Gotham-Black.woff') format('woff'),
+	url('../fonts/Gotham-Black.svg#Gotham-Black') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+// Colours
+$white:#fff;
+$blue:#243888;
+$dark-blue:#162359;
+$red:#e3122a;
+$black:#000;
+$grey:#222222;
+$gutter:50px;
+$text-color:#656565;
+
+// fonts
+$font-light: 'GothamLight', Helvetica, sans-serif;
+$font-regular: 'GothamRegular', Helvetica, sans-serif;
+$font-medium: 'GothamMedium', Helvetica, sans-serif;
+$font-bold: 'GothamBold', Helvetica, sans-serif;
+$font-extrabold: 'GothamBlack', Helvetica, sans-serif;
+$font-extrabold-extra: 'GothamBlack', sans-serif;
+
+ // Mixins
+@mixin box-sizing{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin animaxn{
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+::-webkit-input-placeholder {
+   color:$text-color;
+}
+
+:-moz-placeholder {
+   color:$text-color;
+}
+
+::-moz-placeholder {
+   color:$text-color;
+}
+
+:-ms-input-placeholder {
+   color:$text-color;
+}
+
+.vertical-align {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+.inline-block{
+    display:inline-block;
+	*display:inline;
+	zoom:1;
+	vertical-align:top;
+}
+.display-table{
+    height:100%;
+    display:table;
+    width:100%;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-smoothing-none {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+@mixin transition($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin transitionDelay($delay) {
+  -webkit-transition-delay: $delay;
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
+@mixin transitionDuration($durations) {
+  -webkit-transition-duration: $durations;
+  -moz-transition-duration: $durations;
+  -o-transition-duration: $durations;
+  transition-duration: $durations;
+}
+
+@mixin transitionProperty($property) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+}
+
+@mixin transitionTimingFunction($values) {
+  -webkit-transition-timing-function: $values;
+  -moz-transition-timing-function: $values;
+  -o-transition-timing-function: $values;
+  transition-timing-function: $values;
+}
+
+/* this mixin makes possible to add transition to a specific vendor, example: */
+/* -webkit-transition: -webkit-transform 0.5s linear; */
+@mixin transitionPrefix($property, $values) {
+  -webkit-transition: -webkit-#{$property} #{$values};
+  -moz-transition: -moz-#{$property} #{$values};
+  -ms-transition: -ms-#{$property} #{$values};
+  -o-transition: -o-#{$property} #{$values};
+  transition: #{$property} #{$values};
+}
+
+@mixin background-gradient($from, $to) {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $from), color-stop(100%,  $to));
+  background: -webkit-linear-gradient($from, $to);
+  background: -moz-linear-gradient($from, $to);
+  background: -o-linear-gradient($from, $to);
+  background: linear-gradient($from, $to);
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transformOrigin($transformOrigins) {
+  -moz-transform-origin: $transformOrigins;
+  -o-transform-origin: $transformOrigins;
+  -ms-transform-origin: $transformOrigins;
+  -webkit-transform-origin: $transformOrigins;
+  transform-origin: $transformOrigins;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin animation($animations) {
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  -ms-animation: $animations;
+  animation: $animations;
+}
+
+@mixin animationDuration($value) {
+  -webkit-animation-duration: $value;
+  -moz-animation-duration: $value;
+  -o-animation-duration: $value;
+  -ms-animation-duration: $value;
+  animation-duration: $value;
+}
+
+@mixin animationDelay($value) {
+  -webkit-animation-delay: $value;
+  -moz-animation-delay: $value;
+  -o-animation-delay: $value;
+  -ms-animation-delay: $value;
+  animation-delay: $value;
+}
+
+@mixin animationTimingFunction($value) {
+  -webkit-animation-timing-function: $value;
+  -moz-animation-timing-function: $value;
+  -o-animation-timing-function: $value;
+  -ms-animation-timing-function: $value;
+  animation-timing-function: $value;
+}
+
+@mixin keyFrame($name) {
+  @-webkit-keyframes #{$name}{
+    @content
+  }
+  @-moz-keyframes #{$name}{
+    @content
+  }
+  @-o-keyframes #{$name}{
+    @content
+  }
+  @keyframes #{$name}{
+    @content
+  }
+}
+
+
+/* fade in up */
+@include keyFrame(customFadeInUp) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(20px));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.customFadeInUp {
+  -webkit-animation-name: customFadeInUp;
+  animation-name: customFadeInUp;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+
+  @include animationDuration(1s);
+}
+
+.invisible {
+  visibility: hidden!important;
+}

@@ -1,0 +1,99 @@
+@import 'general', 'fonts';
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin:0; padding:0;
+}
+:focus{
+  outline:none;
+}
+.row:before, .row:after, .clearfix:before, .clearfix:after, .horz-list:after, .horz-list:before { content:""; display:table; }
+.row:after, .clearfix:after, .horz-list:after { clear: both; }
+.row, .clearfix, .horz-list { zoom: 1; }
+
+// a different sort of clearfix
+.clearfix {
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    zoom: 1;
+}
+
+::-webkit-input-placeholder {
+  color:$text-color;
+}
+::-moz-placeholder {
+  color:$text-color;
+}
+:-ms-input-placeholder {
+   color:$text-color;
+}
+:-moz-placeholder {
+   color:$text-color;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, a img{
+	vertical-align: top;
+  outline:none;
+  border:none;
+}
+body{
+	background:#ffffff;
+	margin: 0px;
+	padding: 0px;
+}
+body, td, th, select, input, textarea {
+    font-family:$font-regular;
+    font-size: 14px;
+    line-height:24px;
+    color:$text-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {color:$blue; text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+
+// Import Layout
+
+@import 'layout', 'bxslider';
+//
+
+// Import Media Queries
+
+@import 'media-queries';
+
+
+
+// Import Cross-browser Compaitibility Files
+
+@import 'ie8', 'ie9';
+
