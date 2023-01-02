@@ -56,7 +56,7 @@ $events_loop = new WP_Query( $events_args );
 						</div>
 						<a href="<?php the_permalink() ?>" class="event-excerpt">
 							<div class="event-location"><?php echo  rwmb_meta( 'wiocc-event_location' )?> </div>
-							<div class="event-date">
+							<!-- <div class="event-date">
 								<div class="display-table">
 									<div class="vertical-align">
 										<?php echo  rwmb_meta( 'wiocc-event_start_date' )?>
@@ -65,7 +65,7 @@ $events_loop = new WP_Query( $events_args );
 										<?php endif; ?>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="event-name"><?php the_title() ?></div>
 							<div class="event-month"><?php echo  rwmb_meta( 'wiocc-event_start_date' )?>
