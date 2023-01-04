@@ -44,8 +44,8 @@ $events_loop = new WP_Query( $events_args );
 
 						<div class="event-name"><?php the_title() ?></div>
 						<div class="event-month"><?php echo  rwmb_meta( 'wiocc-event_month' )[0]?></div>
-						<div><?php the_content(); ?></div>
 					</a>
+					<div class="event-content"><?php the_content(); ?></div>
 
 <!--					<div class="event-timer" id="eventTimer">-->
 

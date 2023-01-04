@@ -273,6 +273,9 @@ h2.faq{
 .event-location {
 	margin-right: 14px;
 }
+.event-content > p {
+	margin-bottom: 10px;
+}
 .map-thumbnail{
 	margin-top:9%;
 }
