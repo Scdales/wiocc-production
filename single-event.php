@@ -81,14 +81,14 @@ $events_loop = new WP_Query( $events_args );
 <!--						</script>-->
 <!--					</div>-->
 
-					<div class="event-details text-sheet">
+					<!-- <div class="event-details text-sheet">
 						<p>
                             To meet with us at any of these events, reach out at
 						</p>
 						<p>
 							<a href="">marketing@wiocc.net</a>
 						</p>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
