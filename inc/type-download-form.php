@@ -88,21 +88,6 @@ function mega_get_download_form_meta_box( $meta_boxes ) {
                 'name' => esc_html__( 'Email', 'wiocc' ),
 
             ),
-            array(
-                'name'            => 'Industry',
-                'id'              => 'industry',
-                'type'            => 'select',
-                'options'         => array(
-                    'industry'       => 'Industry',
-                    'IT' => 'IT',
-                    'marketing'        => 'Marketing',
-                ),
-                'multiple'        => true,
-                'placeholder'     => 'Select an Item',
-
-            ),
-
-
         ),
     );
 
