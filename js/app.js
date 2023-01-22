@@ -41,7 +41,8 @@ $('form#download-form').validate({
                 console.log(response.message);
                 response_data.link = response.fileLink;
             },
-            complete: function () {
+            complete: function (smh) {
+                console.log('SMH:', smh);
                 $('.notification').fadeIn();
                 $('#form-div').empty();
                 window.location = response_data.link;

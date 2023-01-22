@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post(); ?>
                 <area  alt="" title="" href="https://www.lca.org.ls/" shape="rect" coords="340,594,424,653" style="outline:none;" target="_self"     />
                 <area  alt="" title="" href="https://www.bofinet.co.bw/" shape="rect" coords="228,517,312,576" style="outline:none;" target="_self"     />
                 <area  alt="" title="" href="https://zantel.co.tz/" shape="rect" coords="197,424,281,483" style="outline:none;" target="_self"     />
-                <area  alt="" title="" href="http://www.onatel.bi/" shape="rect" coords="174,320,258,379" style="outline:none;" target="_self"     />
+                <area  alt="" title="" href="https://www.facebook.com/OnatelBurundi/" shape="rect" coords="174,320,258,379" style="outline:none;" target="_self"     />
                 <!--<area  alt="" title="" href="https://www.liquid.tech/" shape="rect" coords="65,320,149,379" style="outline:none;" target="_self"     />-->
                 <!--<area  alt="" title="" href="http://gilat.net/" shape="rect" coords="5,238,89,297" style="outline:none;" target="_self"     />-->
                 <!--<area  alt="" title="" href="https://lptic.ly/en/" shape="rect" coords="287,12,354,71" style="outline:none;" target="_self"     />-->
@@ -52,7 +52,7 @@ while ( have_posts() ) : the_post(); ?>
                 <area  alt="" title="" href="https://www.lca.org.ls/" shape="rect" coords="165,287,200,319" style="outline:none;" target="_self"     />
                 <area  alt="" title="" href="https://www.bofinet.co.bw/" shape="rect" coords="111,251,145,283" style="outline:none;" target="_self"     />
                 <area  alt="" title="" href="http://www.zantel.co.tz/" shape="rect" coords="95,204,130,236" style="outline:none;" target="_self"     />
-                <area  alt="" title="" href="http://www.onatel.bi/" shape="rect" coords="84,155,118,185" style="outline:none;" target="_self"     />
+                <area  alt="" title="" href="https://www.facebook.com/OnatelBurundi/" shape="rect" coords="84,155,118,185" style="outline:none;" target="_self"     />
                 <!--<area  alt="" title="" href="https://www.liquid.tech/" shape="rect" coords="36,155,70,185" style="outline:none;" target="_self"     />-->
                 <!--<area  alt="" title="" href="http://gilat.net/" shape="rect" coords="4,113,38,144" style="outline:none;" target="_self"     />-->
                 <area  alt="" title="" href="https://acagp.com/" shape="rect" coords="15,16,60,40" style="outline:none;" target="_self"     />
