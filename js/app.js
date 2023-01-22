@@ -22,6 +22,12 @@ $('form#contact_form').validate({
 		});
 	}
 });
+
+$('.brochure-download').on('click', () => {
+	$('.error-notification').empty();
+	$('.brochure-download').attr("disabled", false);
+});
+
 var response_data ={};
 $('form#download-form').validate({
     rules: {}, submitHandler: function (form) {
@@ -31,20 +37,26 @@ $('form#download-form').validate({
             type: "POST",
             cache: false,
             error: function (err) {
-            	//console.log(error)
+            	// console.log('error:', err);
                 var response = JSON.parse(err.responseText);
-                $('.notification').html(response.message).fadeIn();
+                $('.error-notification').html(`
+					<p style="color: red;">${response.message}</p>
+				`).fadeIn();
             },
             success: function (data) {
-            	console.log('data');
+            	// console.log('data');
                 var response = JSON.parse(data);
                 console.log(response.message);
                 response_data.link = response.fileLink;
             },
             complete: function () {
-                $('.notification').fadeIn();
-                $('#form-div').empty();
-                window.location = response_data.link;
+				// console.log('complete');
+				$('.brochure-download').attr("disabled", false);
+				if (response_data.link) {
+					$('.notification').fadeIn();
+					$('#form-div').empty();
+                	window.location = response_data.link;
+				}
             }
         });
     }

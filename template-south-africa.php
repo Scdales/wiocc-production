@@ -30,7 +30,11 @@ $client_loop = new WP_Query( $client_args );
 $testimonial_args = array( 'post_type' => 'testimonial', 'posts_per_page' => 10, 'category_name' => rwmb_meta( 'testimonials-category' ) );
 $testimonial_loop = new WP_Query( $testimonial_args );
 
+$download_sheet = rwmb_meta('wiocc-download_brochure');
 ?>
+
+<?php get_template_part('template-parts/download', 'brochure-modal', ['link' => $download_sheet] ); ?>
+
 <!--
 <div class="homepage-slider">
 	<div class="banner-share">
@@ -136,6 +140,10 @@ $testimonial_loop = new WP_Query( $testimonial_args );
     							<?php echo   pll_e('Download Coverage Map');?>
     							<span></span>
     						</a>
+							<?php if (!empty($download_sheet)): ?>
+								<a style="margin-top:30px" target="" href=" " class="cta download-sheet"><?php pll_e('Download Brochure'); ?>
+									<span></span></a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

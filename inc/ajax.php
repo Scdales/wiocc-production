@@ -21,9 +21,16 @@ function download ()
         'message'=>'There was an error try again',
         'fileLink' => $_POST['file_link']
     );
-    if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['location']) && isset($_POST['checker'])) {
-        if (!is_email($_POST['email'])) {
+    if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['checker'])) {
+        if (!strlen($_POST['first_name']) > 0) {
+            $return_array['message'] = 'Please enter a first name';
+            $return_array['success'] = false;
+        } else if (!strlen($_POST['last_name']) > 0) {
+            $return_array['message'] = 'Please enter a last name';
+            $return_array['success'] = false;
+        } else if (!is_email($_POST['email'])) {
             $return_array['message'] = 'Please enter a valid Email';
+            $return_array['success'] = false;
         } else {
             $first_name = sanitize_text_field($_POST['first_name']);
             $last_name = sanitize_text_field($_POST['last_name']);
@@ -31,7 +38,7 @@ function download ()
             $industry = sanitize_text_field($_POST['location']);
 
             $id = wp_insert_post(array(
-                'post_title' => $first_name . '' . $last_name,
+                'post_title' => $first_name . ' ' . $last_name,
                 'post_content' => '',
                 'post_date' => date('Y-m-d H:i:s'),
                 'post_type' => 'download-form',
@@ -48,10 +55,12 @@ function download ()
             }
         }
 
-    }
-    else{
+    } else if (!isset($_POST['checker'])) {
+        $return_array['message']='You must tick consent to access the file';
+        $return_array['success'] = false;
+    } else {
         $return_array['message']='Please enter a valid name/email combination';
-        $return_array['success'] = true;
+        $return_array['success'] = false;
     }
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         if($return_array['success']==false){
