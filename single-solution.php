@@ -34,6 +34,7 @@ while (have_posts()) :
                             <input type="submit" class="cta close" value="Close">
                         </div>
                     </div>
+				    <div class="error-notification"></div>
                     <div id="form-div">
                         <h4>Download Product Guide</h4>
 <!--                        <p>--><?php //pll_e('Before you can download the WIOCC product Guide, we just need a few details from you.'); ?><!--</p>-->
@@ -68,7 +69,7 @@ while (have_posts()) :
                                                     <?php
                                                 } ?>
                                                 <input type="hidden"  name="file_link"
-                                                       value="<?php echo $file['url']; ?> "">
+                                                       value="<?php echo $file['url']; ?>">
                                             <?php endif; ?>
                                     </div>
                                 </div>
@@ -85,7 +86,7 @@ while (have_posts()) :
                             </div>
 
                             <div class="form-group no-margin">
-                                <input type="submit" class="cta" value="Download">
+                                <input type="submit" class="cta brochure-download" value="Download">
                             </div>
 
                         </form>
